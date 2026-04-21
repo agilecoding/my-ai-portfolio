@@ -595,7 +595,7 @@
       background: var(--bg2); border: 1px solid rgba(139,92,246,.25);
       border-radius: 1.5rem; width: 100%; max-width: 960px;
       padding: 2.5rem 2rem; box-shadow: 0 0 80px rgba(139,92,246,.15);
-      position: relative;
+      position: relative; margin: auto 0;
     }
     .aip-header {
       display: flex; align-items: flex-start; justify-content: space-between;
@@ -615,7 +615,7 @@
     .aip-close:hover { background: var(--violet); color: #fff; }
     .aip-grid {
       display: grid; gap: 1.25rem;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
     }
     .aip-card {
       background: var(--bg3); border: 1px solid rgba(139,92,246,.2);
@@ -1249,3 +1249,4 @@ skillBarsFinalObs.observe(document.getElementById('skills'));
   </div>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                               
