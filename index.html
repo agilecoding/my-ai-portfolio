@@ -321,7 +321,7 @@
       github: "",
       demo: "https://youtu.be/RNCA34T6MRk",
       video: "https://youtu.be/60FXsBOZhx8",
-      thumb: "https://i9.ytimg.com/vi_webp/RNCA34T6MRk/mq2.webp?sqp=CNT5ms8G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGDYgRih_MA8=&rs=AOn4CLDzDZDkUNV2H4UzV6kYBb1cA3QouQ",
+      thumb: "https://img.youtube.com/vi/RNCA34T6MRk/hqdefault.jpg",
       status: "Completed",
       details: {
         summary: "Developed an end-to-end Python desktop application that converted chess PGN data into voice narration video by integrating Lichess PGN file exports - retrieved via API, Anthropic Claude narration (move-by-move instructional commentary and metadata), synthesizes voiceovers with gTTS/ElevenLabs, board-frame rendering with Pillow, and assembles 1080p MP4 videos with FFmpeg.",
@@ -1130,14 +1130,13 @@ skillBarsFinalObs.observe(document.getElementById('skills'));
     return 'placeholder';
   }
   function thumbHTML(p, idx){
-    if(p.thumb) return `<img src="${p.thumb}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'">`;
+    const videoURL = p.video || p.demo || '';
+    const playOverlay = videoURL
+      ? `<div class="aip-thumb-video" onclick="window.open('${videoURL}','_blank')" title="Watch demo"><div class="aip-play-btn">&#x25B6;</div></div>`
+      : '';
+    if(p.thumb) return `<img src="${p.thumb}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'">${playOverlay}`;
     const icon = ICONS[idx % ICONS.length];
-    let overlay = '';
-    if(p.video){
-      overlay = `<div class="aip-thumb-video" onclick="window.open('${p.video}','_blank')" title="Watch demo">
-        <div class="aip-play-btn">&#x25B6;</div></div>`;
-    }
-    return `<span class="aip-thumb-icon">${icon}</span>${overlay}`;
+    return `<span class="aip-thumb-icon">${icon}</span>${playOverlay}`;
   }
   function linksHTML(p){
     let html = '';
