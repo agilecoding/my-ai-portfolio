@@ -920,7 +920,11 @@
       </div>
       <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)"
         action="https://formspree.io/f/xqewlrjp" method="POST">
-        <div class="form-group"><label>Email</label><input name="email" type="email" placeholder="hire_me@your-company.com" required /></div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input name="first_name" type="text" placeholder="First Name" required /></div>
+          <div class="form-group"><label>Last Name</label><input name="last_name" type="text" placeholder="Last Name" required /></div>
+        </div>
+        <div class="form-group"><label>Email</label><input name="email" type="email" placeholder="your.email@company.com" required /></div>
         <div class="form-group"><label>Subject</label><input name="subject" type="text" placeholder="e.g. Engineering Leader, QE Expert, Consulting..." /></div>
         <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell me about the role or challenge…" required></textarea></div>
         <button type="submit" class="form-submit" id="form-btn">Send Message →</button>
@@ -1290,4 +1294,4 @@ skillBarsFinalObs.observe(document.getElementById('skills'));
   </div>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                               
